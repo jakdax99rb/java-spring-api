@@ -1,0 +1,22 @@
+type Movie {
+  id: ID!
+  posterLink: String
+  title: String
+  releaseYear: Int
+  certificate: String
+  runtime: Int
+  genre: [String]
+  imdbRating: Float
+  overview: String
+  metaCriticScore: Int
+  director: String
+  stars: [String]
+  votes: Int
+  gross: Int
+}
+
+extend type Query {
+  movies(director: String, actor: String, title: String): [Movie]
+  test: String
+  movies(amount: Int!): [Movie]
+}
