@@ -29,5 +29,6 @@ public class TraceIdFilter extends OncePerRequestFilter {
         }
         MDC.put(traceIdHeader, traceId);
         filterChain.doFilter(request, response);
+        MDC.remove(traceIdHeader);
     }
 }
