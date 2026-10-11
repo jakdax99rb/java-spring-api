@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class SecureController {
     @GetMapping("/helloWorld")
     public String helloWorld() {
+        log.info("hello Secure World");
         return "Hello Secure World";
     }
 }

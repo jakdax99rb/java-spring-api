@@ -17,7 +17,8 @@ import java.io.UnsupportedEncodingException;
 
 @Slf4j
 @Component
-@FilterRegistration(name = "LoggingFilter", urlPatterns = "/api/*", order = OrderedFilter.REQUEST_WRAPPER_FILTER_MAX_ORDER + 3)
+@FilterRegistration(name = "LoggingFilter", urlPatterns = "/api/*", order =
+        OrderedFilter.REQUEST_WRAPPER_FILTER_MAX_ORDER + 4)
 public class LoggingFilter extends OncePerRequestFilter {
 
     @Override
