@@ -2,6 +2,7 @@ package com.example.java_spring_api.controller;
 
 import com.example.java_spring_api.exception.custom.CustomException;
 import com.example.java_spring_api.model.HelloBody;
+import com.example.java_spring_api.service.ExampleService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 @Slf4j
 public class BaseController {
+
+    private final ExampleService exampleService;
 
     @GetMapping("/helloWorld")
     @ResponseBody
@@ -36,5 +39,13 @@ public class BaseController {
     public String customException() throws CustomException {
         log.error("Oh no, going to throw a custom error now!");
         throw new CustomException();
+    }
+
+    @GetMapping("/envVar")
+    @ResponseBody
+    @ResponseStatus(HttpStatus.OK)
+    public String envVar() {
+        log.info("Getting env variable!");
+        return exampleService.getEnvVar();
     }
 }
