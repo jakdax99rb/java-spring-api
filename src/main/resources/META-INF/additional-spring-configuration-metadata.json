@@ -1,8 +1,0 @@
-{
-  "properties": [
-    {
-      "name": "api.filter.logging.urlPatterns",
-      "type": "java.lang.String",
-      "description": "Sets the patterns for the logging filter in com.example.java_spring_api.filter.LoggingFilter."
-  }
-] }
